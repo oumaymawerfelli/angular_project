@@ -1,0 +1,78 @@
+.residences-container {
+  display: flex;
+  gap: 40px; /* Augmenter l'espace entre les résidences */
+  overflow-x: auto; /* Défilement horizontal si besoin */
+  padding: 20px;
+  justify-content: center; /* Centrer les résidences */
+}
+
+
+.residence-card {
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 400px; /* Augmenter la largeur des cartes */
+  text-align: center;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.residence-card img {
+  width: 100%; /* Adapter l'image à la largeur de la carte */
+  height: 250px; /* Augmenter la hauteur */
+  object-fit: cover; /* Ajuste l'image sans la déformer */
+  border-radius: 10px;
+  border: 3px solid #ddd; /* Ajout d'un contour pour améliorer la clarté */
+}
+
+.residence-card p {
+  font-size: 20px; /* Augmenter la taille du texte */
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.residence-card button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.residence-card button:hover {
+  background-color: #0056b3;
+}
+
+.available {
+  color: green;
+  font-size: 20px;
+}
+
+.under-construction {
+  color: orange;
+  font-size: 20px;
+}
+
+.sold {
+  color: red;
+  font-size: 20px;
+}
+.residence-card button.liked {
+  background-color: #28a745; /* Vert pour indiquer un "like" */
+  color: white;
+}
+.residence-card .button-container {
+  display: flex;
+  flex-direction: column; /* Empiler les boutons verticalement */
+  gap: 10px; /* Espacement entre les boutons */
+}
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
