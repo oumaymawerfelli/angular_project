@@ -1,0 +1,16 @@
+<div class="apartments-list">
+    <h2>Liste des Appartements</h2>
+    <ul>
+      <li *ngFor="let apartment of apartments">
+        <h3>Appartement {{ apartment.apartNum }}</h3>
+        <p>Surface : {{ apartment.surface }} m²</p>
+        <p>Catégorie : {{ apartment.category }}</p>
+        <p>Terrasse : {{ apartment.terrace ? 'Oui' : 'Non' }}</p>
+        <p>Surface terrasse : {{ apartment.surfaceterrace }} m²</p>
+      </li>
+    </ul>
+</div>
+
+<!-- Button for creating a new apartment -->
+<button (click)="addApartment()">new apartment</button>
+ 

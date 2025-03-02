@@ -1,0 +1,38 @@
+<div *ngIf="residence" class="details-container">
+  <h2>{{ residence.name }}</h2>
+  <img [src]="residence.image" alt="Residence image" class="residence-image">
+  
+  <div class="info-section">
+    <p><strong>Description:</strong> {{ residence.description }}</p>
+    <p><strong>Adresse:</strong> {{ residence.address }}</p>
+    <p><strong>Statut:</strong> 
+      <span [ngClass]="{
+        'status-available': residence.status === 'Disponible',
+        'status-construction': residence.status === 'En Construction',
+        'status-sold': residence.status === 'Vendu'
+      }">
+        {{ residence.status }}
+      </span>
+    </p>
+  </div>
+
+  <button (click)="showNext()" class="next-button">
+    Next ➔
+  </button>
+</div>
+
+<div *ngIf="!residence" class="loading">
+  Chargement...
+</div>
+
+<div class="action-buttons">
+  <button routerLink="/add-residence" class="btn-add">
+    ➕ Add Residence
+  </button>
+
+  <button [routerLink]="['/add-residence', residence.id]" class="btn-update">
+    ✏️ Update Residence
+  </button>
+</div>
+
+

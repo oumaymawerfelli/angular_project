@@ -1,78 +1,101 @@
+/* Styles généraux pour la liste des résidences */
 .residences-container {
   display: flex;
-  gap: 40px; /* Augmenter l'espace entre les résidences */
-  overflow-x: auto; /* Défilement horizontal si besoin */
-  padding: 20px;
-  justify-content: center; /* Centrer les résidences */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-
 .residence-card {
-  border: 2px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  width: 400px; /* Augmenter la largeur des cartes */
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
   text-align: center;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.residence-card:hover {
+  transform: scale(1.05); /* Légère animation au survol */
 }
 
 .residence-card img {
-  width: 100%; /* Adapter l'image à la largeur de la carte */
-  height: 250px; /* Augmenter la hauteur */
-  object-fit: cover; /* Ajuste l'image sans la déformer */
-  border-radius: 10px;
-  border: 3px solid #ddd; /* Ajout d'un contour pour améliorer la clarté */
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+}
+
+.residence-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
 }
 
 .residence-card p {
-  font-size: 20px; /* Augmenter la taille du texte */
+  font-size: 14px;
+  color: #777;
   margin: 10px 0;
-  font-weight: bold;
 }
 
 .residence-card button {
-  padding: 12px 20px;
-  font-size: 18px;
-  border: none;
   background-color: #007bff;
-  color: white;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 5px;
-  transition: 0.3s;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
 }
 
 .residence-card button:hover {
   background-color: #0056b3;
 }
 
+/* Styles pour le texte de recherche */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+  display: block;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* Styles pour les statuts */
 .available {
   color: green;
-  font-size: 20px;
 }
 
 .under-construction {
   color: orange;
-  font-size: 20px;
 }
 
 .sold {
   color: red;
-  font-size: 20px;
 }
-.residence-card button.liked {
-  background-color: #28a745; /* Vert pour indiquer un "like" */
-  color: white;
+
+/* Styles pour le bouton de like */
+button[ngClass='like'] {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
 }
-.residence-card .button-container {
-  display: flex;
-  flex-direction: column; /* Empiler les boutons verticalement */
-  gap: 10px; /* Espacement entre les boutons */
-}
-.search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+button[ngClass='like']:hover {
+  color: #0056b3;
 }

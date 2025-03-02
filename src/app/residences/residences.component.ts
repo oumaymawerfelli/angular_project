@@ -9,9 +9,9 @@ export class ResidencesComponent {
   searchText: string = ''; // Texte de recherche
 
   residences = [
-    { id: 1, image: 'assets/images/R1.jpg', address: '123 Rue de Paris, France', status: 'Disponible', showAddress: false, isLiked: false },
-    { id: 2, image: 'assets/images/R2.jpg', address: 'inconnu', status: 'En Construction', showAddress: false, isLiked: false },
-    { id: 3, image: 'assets/images/R3.jpg', address: '789 Boulevard de Nice, France', status: 'Vendu', showAddress: false, isLiked: false }
+    { id: 1, name: 'El fel', description: 'Belle maison avec vue.', image: 'assets/images/R1.jpg', address: 'Borj Cedria', status: 'Disponible', showAddress: false, isLiked: false },
+    { id: 2, name: 'El yasmine', description: 'Maison en construction.', image: 'assets/images/R2.jpg', address: 'Inconnu', status: 'En Construction', showAddress: false, isLiked: false },
+    { id: 3, name: 'El Arij', description: 'Maison récemment vendue.', image: 'assets/images/R3.jpg', address: 'Ezzahra', status: 'Vendu', showAddress: false, isLiked: false }
   ];
 
   // Fonction qui retourne les résidences filtrées
