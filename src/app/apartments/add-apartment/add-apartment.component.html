@@ -1,1 +1,42 @@
-<p>add-apartment works!</p>
+<h2>Add New Apartment</h2>
+
+<form [formGroup]="apartForm" (ngSubmit)="onSubmit()">
+  <!-- Apartment Number -->
+  <label for="apartmentNumber">Apartment Number:</label>
+  <input id="apartmentNumber" type="text" formControlName="apartmentNumber">
+  
+  <!-- Floor Number -->
+  <label for="floorNumber">Floor Number:</label>
+  <input id="floorNumber" type="number" formControlName="floorNumber">
+  
+  <!-- Surface -->
+  <label for="surface">Surface:</label>
+  <input id="surface" type="number" formControlName="surface">
+  
+  <!-- Terrace -->
+  <label>Terrace:</label>
+  <div>
+    <input type="radio" formControlName="terrace" value="yes"> Yes
+    <input type="radio" formControlName="terrace" value="no"> No
+  </div>
+
+  <!-- Surface Terrace -->
+  <label for="surfaceTerrace">Surface Terrace:</label>
+  <input id="surfaceTerrace" type="number" formControlName="surfaceTerrace">
+  
+  <!-- Category -->
+  <label>Category:</label>
+  <div>
+    <input type="radio" formControlName="category" value="S+1"> S+1
+    <input type="radio" formControlName="category" value="S+2"> S+2
+    <input type="radio" formControlName="category" value="S+3"> S+3
+  </div>
+
+  <!-- Residence -->
+  <label for="residence">Residence:</label>
+  <input id="residence" type="text" formControlName="residence">
+
+  <!-- Buttons -->
+  <button type="submit" [disabled]="apartForm.invalid">Add</button>
+  <button type="button" (click)="resetForm()">Reset</button>
+</form>

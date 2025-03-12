@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
-import { RouterModule } from '@angular/router'; // ✅ Ajouter RouterModule
-import { AppRoutingModule } from './app-routing.module'; // ✅ Ajouter AppRoutingModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // ✅ Import ReactiveFormsModule
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ResidencesComponent } from './residences/residences.component';
@@ -28,13 +28,15 @@ import { AddApartmentComponent } from './apartments/add-apartment/add-apartment.
     AddResidenceComponent,
     ApartmentsComponent,
     ApartmentsByResidenceComponent,
-    AddApartmentComponent
+   
   ],
   imports: [
     BrowserModule,
     FormsModule, 
-    RouterModule, // ✅ Ajouter ici
-    AppRoutingModule // ✅ Ajouter ici
+    ReactiveFormsModule,  // ✅ Add this line
+    RouterModule,
+    AppRoutingModule,
+    AddApartmentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

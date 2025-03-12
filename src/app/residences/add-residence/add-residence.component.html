@@ -1,9 +1,34 @@
-<h2>{{ isUpdateMode ? 'Update Residence' : 'Add New Residence' }}</h2>
+<form [formGroup]="residenceForm" (ngSubmit)="onSubmit()">
+  <!-- Nom -->
+  <div>
+    <input type="text" formControlName="name" placeholder="Nom">
+    <div *ngIf="residenceForm.get('name')?.invalid">
+      <span *ngIf="residenceForm.get('name')?.hasError('required')">Obligatoire</span>
+      <span *ngIf="residenceForm.get('name')?.hasError('minlength')">Minimum 3 caractères</span>
+    </div>
+  </div>
 
-<form>
-  <!-- Ajoutez vos champs de formulaire ici -->
-  
-  <button type="submit">
-    {{ isUpdateMode ? 'Update' : 'Create' }}
-  </button>
+  <!-- Image -->
+  <div>
+    <input type="url" formControlName="image" placeholder="URL image">
+    <div *ngIf="residenceForm.get('image')?.invalid">
+      <span *ngIf="residenceForm.get('image')?.hasError('required')">Obligatoire</span>
+      <span *ngIf="residenceForm.get('image')?.hasError('pattern')">Format image invalide</span>
+    </div>
+  </div>
+
+  <!-- Appartements -->
+  <div formArrayName="apartments">
+    <div *ngFor="let apartment of apartments.controls; let i = index" [formGroupName]="i">
+      <h4>Appartement {{ i + 1 }}</h4>
+      
+      <input formControlName="apartmentNumber" placeholder="Numéro">
+      <input type="number" formControlName="surface" placeholder="Surface">
+      
+      <button (click)="removeApartment(i)">Supprimer</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addApartment()">Ajouter Appartement</button>
+  <button type="submit" [disabled]="residenceForm.invalid">Créer Résidence</button>
 </form>
